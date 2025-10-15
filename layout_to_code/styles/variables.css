@@ -1,0 +1,46 @@
+/* CSS Variables */
+:root {
+    /* Colors */
+    --primary-color: #1D1D1F;
+    --secondary-color: #838383;
+    --background-dark: #1D1D1F;
+    --background-light: #FFFFFF;
+    --text-dark: #1D1D1F;
+    --text-light: #FFFFFF;
+    --border-color: #838383;
+    
+    /* Typography */
+    --font-family: 'Inter', sans-serif;
+    --font-size-xs: 13px;
+    --font-size-sm: 16px;
+    --font-size-md: 17px;
+    --font-size-lg: 24px;
+    --font-size-xl: 32px;
+    --font-size-xxl: 96px;
+    
+    /* Spacing */
+    --spacing-xs: 20px;
+    --spacing-sm: 30px;
+    --spacing-md: 34px;
+    --spacing-lg: 40px;
+    --spacing-xl: 41px;
+    --spacing-xxl: 50px;
+    --spacing-xxxl: 60px;
+    --spacing-xxxxl: 90px;
+    --spacing-xxxxxl: 110px;
+    --spacing-hero: 160px;
+    
+    /* Layout */
+    --container-width: 1600px;
+    --section-gap: 120px;
+    --footer-gap: 260px;
+    
+    /* Button sizes */
+    --button-width: 180px;
+    --button-height: 60px;
+    
+    /* Image sizes */
+    --image-width: 570px;
+    --image-height: 400px;
+    --icon-size: 40px;
+}

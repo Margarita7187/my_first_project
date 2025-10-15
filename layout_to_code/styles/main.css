@@ -1,0 +1,210 @@
+@import url('reset.css');
+@import url('variables.css');
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header img {
+    height: 900px;
+    width: var(--container-width);
+    display: block;
+}
+
+.content-over1 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: var(--container-width);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.navlogo {
+    margin-top: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    color: var(--text-light);
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 180px;
+    box-sizing: border-box;
+}
+
+.navlogo h1 {
+    font-size: var(--font-size-xl);
+    margin-left: 15px;
+}
+
+.navbar {
+    display: flex;
+    gap: var(--spacing-md);
+    font-size: var(--font-size-sm);
+}
+
+.phrasa {
+    margin-top: var(--spacing-hero);
+    margin-left: 200px;
+    color: var(--text-light);
+}
+
+.phrasa h1 {
+    font-size: var(--font-size-xxl);
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.phrasa p {
+    margin-top: var(--spacing-xl);
+    font-size: var(--font-size-sm);
+}
+
+.phrasa button {
+    background-color: var(--background-light);
+    font-size: var(--font-size-md);
+    width: var(--button-width);
+    height: var(--button-height);
+    margin-top: var(--spacing-lg);
+    border: none;
+    cursor: pointer;
+}
+
+.info {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.info1 {
+    margin-top: var(--spacing-xxxxxl);
+    display: flex;
+    gap: var(--section-gap);
+    align-items: center;
+}
+
+.info1 img {
+    height: var(--image-height);
+    width: var(--image-width);
+}
+
+.et-odio h2 {
+    font-size: var(--font-size-lg);
+    color: var(--secondary-color);
+}
+
+.et-odio p {
+    font-size: var(--font-size-sm);
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-xxl);
+}
+
+.et-odio button {
+    height: var(--button-height);
+    width: var(--button-width);
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+.et-odio1 {
+    margin-left: -60px;
+}
+
+.et-odio1 h2 {
+    font-size: var(--font-size-lg);
+    color: var(--secondary-color);
+}
+
+.et-odio1 p {
+    font-size: var(--font-size-sm);
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-xxl);
+}
+
+.et-odio1 button {
+    height: var(--button-height);
+    width: var(--button-width);
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+.basement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: var(--spacing-xxxxl) auto; 
+    background-color: var(--background-dark);
+    height: var(--image-height);
+    width: var(--container-width);
+    gap: var(--footer-gap);
+    margin-bottom: 0px;
+}
+
+.b1 {
+    margin-left: -110px;
+    color: var(--text-light);
+}
+
+.b1 h1 {
+    margin-bottom: var(--spacing-xxxl);
+    margin-top: -20px;
+}
+
+.b11 {
+    margin-top: var(--spacing-sm);
+    gap: var(--spacing-xs);
+    display: flex;
+}
+
+.b11 img {
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
+
+.b2 {
+    color: var(--text-light);
+    margin-top: -110px;
+    margin-left: -50px;
+}
+
+.b2 input {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    border: none;
+    font-size: var(--font-size-xs);
+    border-bottom-color: var(--border-color);
+    border-bottom-width: 2px;
+    border-style: solid;
+    height: 44px;
+    width: var(--image-width);
+    border-top-color: var(--background-dark);
+    border-left-color: var(--background-dark);
+    border-right-color: var(--background-dark);
+    padding: 0 10px;
+}
+
+.b2 input::placeholder {
+    color: var(--secondary-color);
+}
+
+.b2 input:focus {
+    outline: none;
+    border-bottom-color: var(--text-light);
+}
