@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма регистрации</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="form-title">Регистрация</h1>
+        
+        <form id="registrationForm" novalidate>
+            <div class="form-group">
+                <label for="firstName">Имя *</label>
+                <input type="text" id="firstName" class="form-control" required>
+                <div class="error-message" id="firstNameError">Пожалуйста, введите ваше имя</div>
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Фамилия *</label>
+                <input type="text" id="lastName" class="form-control" required>
+                <div class="error-message" id="lastNameError">Пожалуйста, введите вашу фамилию</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" class="form-control" required>
+                <div class="error-message" id="emailError">Пожалуйста, введите корректный email</div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Телефон</label>
+                <input type="tel" id="phone" class="form-control" pattern="[\+]?[0-9\s\-\(\)]+">
+                <div class="error-message" id="phoneError">Пожалуйста, введите корректный номер телефона</div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Пароль *</label>
+                <input type="password" id="password" class="form-control" required minlength="6">
+                <div class="error-message" id="passwordError">Пароль должен содержать минимум 6 символов</div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Подтверждение пароля *</label>
+                <input type="password" id="confirmPassword" class="form-control" required>
+                <div class="error-message" id="confirmPasswordError">Пароли не совпадают</div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="birthDate">Дата рождения</label>
+                    <input type="date" id="birthDate" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                    <label for="country">Страна</label>
+                    <select id="country" class="form-control">
+                        <option value="">Выберите страну</option>
+                        <option value="ru">Россия</option>
+                        <option value="kz">Казахстан</option>
+                        <option value="by">Беларусь</option>
+                        <option value="other">Другая</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Пол</label>
+                <div style="display: flex; gap: 20px; margin-top: 8px;">
+                    <div class="checkbox-group">
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Мужской</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Женский</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">Я принимаю условия пользовательского соглашения *</label>
+                </div>
+                <div class="error-message" id="termsError">Необходимо принять условия соглашения</div>
+            </div>
+
+            <button type="submit" class="submit-btn">Зарегистрироваться</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
