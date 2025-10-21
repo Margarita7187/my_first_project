@@ -1,0 +1,19 @@
+1. Fetch API современнее и проще чем XMLHttpRequest, работает с промисами. XMLHttpRequest сложнее но поддерживает отслеживание прогресса загрузки.
+
+2. В Fetch API ошибки HTTP типа 404 или 500 не вызывают reject промиса - промис завершается успешно но с response.ok = false. Reject происходит только при сетевых ошибках.
+
+3. GET - получение данных, POST - создание, PUT - полное обновление, PATCH - частичное обновление, DELETE - удаление.
+
+4. Заголовки запроса задаются в options: {headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer token'}}. Заголовки ответа читаются через response.headers.get('название').
+
+5. PUT полностью заменяет ресурс, PATCH обновляет только указанные поля. PUT когда известны все данные ресурса, PATCH когда нужно обновить несколько полей.
+
+6. Basic Auth: 'Basic ' + btoa(логин:пароль), Bearer Token: 'Bearer токен', OAuth2: 'Bearer access_token'. Токены обычно в localStorage.
+
+7. Через AbortController: создаем controller, передаем controller.signal в fetch, для отмены вызываем controller.abort(). Используется при переходе между страницами или таймаутах.
+
+8. JSON: body: JSON.stringify(data) и response.json(). FormData: передаем объект FormData как body. Blob: response.blob(). ArrayBuffer: response.arrayBuffer().
+
+9. Параллельные запросы через Promise.all(), кэширование результатов в памяти, пакетирование запросов, ограничение количества одновременных запросов.
+
+10. Всегда обрабатывать ошибки, использовать таймауты, правильно настраивать CORS, безопасно хранить токены, добавлять интерцепторы для общей логики, мониторить производительность.

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Работа с Fetch API</h1>
+
+        <!-- Задание 1: Базовые GET запросы -->
+        <section class="task-section">
+            <h2>Задание 1: Базовые GET запросы</h2>
+            <button id="fetch-get" class="btn">GET запрос</button>
+            <button id="fetch-json" class="btn">JSON данные</button>
+            <button id="fetch-error" class="btn">Тест ошибок</button>
+            <div id="get-output" class="output"></div>
+            <div id="get-data" class="output"></div>
+        </section>
+
+        <!-- Задание 2: POST, PUT, DELETE запросы -->
+        <section class="task-section">
+            <h2>Задание 2: CRUD операции</h2>
+            <button id="fetch-post" class="btn">POST</button>
+            <button id="fetch-put" class="btn">PUT</button>
+            <button id="fetch-patch" class="btn">PATCH</button>
+            <button id="fetch-delete" class="btn">DELETE</button>
+            <div id="crud-output" class="output"></div>
+        </section>
+
+        <!-- Задание 3: Заголовки и параметры -->
+        <section class="task-section">
+            <h2>Задание 3: Заголовки и параметры</h2>
+            <button id="fetch-headers" class="btn">Кастомные заголовки</button>
+            <button id="fetch-auth" class="btn">Авторизация</button>
+            <button id="fetch-params" class="btn">Параметры URL</button>
+            <button id="fetch-timeout" class="btn">Таймаут</button>
+            <div id="headers-output" class="output"></div>
+        </section>
+
+        <!-- Задание 4: Обработка ответов -->
+        <section class="task-section">
+            <h2>Задание 4: Обработка ответов</h2>
+            <button id="fetch-status" class="btn">Проверка статуса</button>
+            <button id="fetch-response-headers" class="btn">Заголовки ответа</button>
+            <button id="fetch-blob" class="btn">Бинарные данные</button>
+            <button id="fetch-formdata" class="btn">FormData</button>
+            <div id="response-output" class="output"></div>
+            <div id="image-container"></div>
+        </section>
+
+        <!-- Задание 5: Обработка ошибок -->
+        <section class="task-section">
+            <h2>Задание 5: Обработка ошибок</h2>
+            <button id="fetch-network-error" class="btn">Сетевые ошибки</button>
+            <button id="fetch-http-error" class="btn">HTTP ошибки</button>
+            <button id="fetch-abort" class="btn">Отмена запроса</button>
+            <div id="error-output" class="output"></div>
+        </section>
+
+        <!-- Задание 6: Параллельные запросы -->
+        <section class="task-section">
+            <h2>Задание 6: Параллельные запросы</h2>
+            <button id="fetch-promise-all" class="btn">Promise.all</button>
+            <button id="fetch-promise-race" class="btn">Promise.race</button>
+            <button id="fetch-sequential" class="btn">Последовательные</button>
+            <div id="parallel-output" class="output"></div>
+        </section>
+
+        <!-- Задание 7: Реальные сценарии -->
+        <section class="task-section">
+            <h2>Задание 7: Реальные сценарии</h2>
+            <button id="fetch-user-posts" class="btn">Пользователь и посты</button>
+            <button id="fetch-search" class="btn">Поиск</button>
+            <button id="fetch-cache" class="btn">Кэширование</button>
+            <div id="scenario-output" class="output"></div>
+        </section>
+    </div>
+
+    <script src="fetch-tasks.js"></script>
+    <script src="fetch-tests.js"></script>
+</body>
+</html>
