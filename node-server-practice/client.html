@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестовый клиент для Node.js API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background: #0056b3;
+        }
+        .response {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 10px;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+        .endpoint {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Тестовый клиент для Node.js API</h1>
+        
+        <div class="endpoint">
+            <h3>Главная страница</h3>
+            <button class="button" onclick="testEndpoint('/', 'GET')">GET /</button>
+        </div>
+
+        <div class="endpoint">
+            <h3>Пользователи</h3>
+            <button class="button" onclick="testEndpoint('/api/users', 'GET')">GET /api/users</button>
+        </div>
+
+        <div class="endpoint">
+            <h3>Продукты</h3>
+            <button class="button" onclick="testEndpoint('/api/products', 'GET')">GET /api/products</button>
+        </div>
+
+        <div class="endpoint">
+            <h3>Конкретный пользователь</h3>
+            <button class="button" onclick="testEndpoint('/api/user/1', 'GET')">GET /api/user/1</button>
+            <button class="button" onclick="testEndpoint('/api/user/2', 'GET')">GET /api/user/2</button>
+        </div>
+
+        <div class="endpoint">
+            <h3>Отправка данных</h3>
+            <button class="button" onclick="sendPostData()">POST /api/data</button>
+        </div>
+
+        <div class="endpoint">
+            <h3>Несуществующий маршрут</h3>
+            <button class="button" onclick="testEndpoint('/unknown', 'GET')">GET /unknown</button>
+        </div>
+
+        <div id="responseContainer" style="display: none;">
+            <h3>Ответ сервера:</h3>
+            <div id="response" class="response"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:3000';
+
+        async function testEndpoint(endpoint, method) {
+            try {
+                const response = await fetch(API_BASE + endpoint, {
+                    method: method
+                });
+                const data = await response.json();
+                displayResponse(data);
+            } catch (error) {
+                displayResponse({ error: error.message });
+            }
+        }
+
+        async function sendPostData() {
+            const postData = {
+                name: 'Тестовые данные',
+                value: Math.random(),
+                timestamp: new Date().toISOString()
+            };
+
+            try {
+                const response = await fetch(API_BASE + '/api/data', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(postData)
+                });
+                const data = await response.json();
+                displayResponse(data);
+            } catch (error) {
+                displayResponse({ error: error.message });
+            }
+        }
+
+        function displayResponse(data) {
+            document.getElementById('response').textContent = JSON.stringify(data, null, 2);
+            document.getElementById('responseContainer').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
