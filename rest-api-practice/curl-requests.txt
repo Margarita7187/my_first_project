@@ -1,0 +1,47 @@
+# Базовый маршрут
+curl -X GET http://localhost:3000/
+
+# Получить все книги
+curl -X GET http://localhost:3000/api/books
+
+# Получить книги с пагинацией
+curl -X GET "http://localhost:3000/api/books?page=1&limit=2"
+
+# Фильтрация по автору
+curl -X GET "http://localhost:3000/api/books?author=Толстой"
+
+# Фильтрация по жанру
+curl -X GET "http://localhost:3000/api/books?genre=Роман"
+
+# Фильтрация по году
+curl -X GET "http://localhost:3000/api/books?year=1866"
+
+# Получить книгу по ID
+curl -X GET http://localhost:3000/api/books/1
+curl -X GET http://localhost:3000/api/books/999
+
+# Создать новую книгу
+curl -X POST http://localhost:3000/api/books \
+  -H "Content-Type: application/json" \
+  -d '{"title": "Новая книга", "author": "Новый автор", "genre": "Фантастика", "year": 2024, "isbn": "123-4567890123", "pages": 350}'
+
+# Попытка создать книгу без обязательных полей
+curl -X POST http://localhost:3000/api/books \
+  -H "Content-Type: application/json" \
+  -d '{"genre": "Фантастика"}'
+
+# Полное обновление книги (PUT)
+curl -X PUT http://localhost:3000/api/books/1 \
+  -H "Content-Type: application/json" \
+  -d '{"title": "Обновленная книга", "author": "Обновленный автор", "genre": "Драма", "year": 2024, "isbn": "999-9999999999", "pages": 400}'
+
+# Частичное обновление книги (PATCH)
+curl -X PATCH http://localhost:3000/api/books/2 \
+  -H "Content-Type: application/json" \
+  -d '{"title": "Частично обновленная книга", "year": 2023}'
+
+# Удалить книгу
+curl -X DELETE http://localhost:3000/api/books/3
+
+# Несуществующий маршрут
+curl -X GET http://localhost:3000/api/unknown
