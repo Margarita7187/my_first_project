@@ -1,0 +1,19 @@
+{
+  "name": "express-routing-practice",
+  "version": "1.0.0",
+  "description": "Практическая работа по настройке роутинга в Express.js",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js"
+  },
+  "keywords": ["express", "routing", "api", "nodejs"],
+  "author": "Student",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

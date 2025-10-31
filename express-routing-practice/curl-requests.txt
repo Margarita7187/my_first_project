@@ -1,0 +1,55 @@
+# Базовые маршруты
+
+# Главная страница
+curl -X GET http://localhost:3000/
+
+# Страница about
+curl -X GET http://localhost:3000/about
+
+# Пользователи - получить всех
+curl -X GET http://localhost:3000/api/users
+
+# Пользователи - получить по ID
+curl -X GET http://localhost:3000/api/users/1
+curl -X GET http://localhost:3000/api/users/999
+
+# Пользователи - создать нового
+curl -X POST http://localhost:3000/api/users \
+  -H "Content-Type: application/json" \
+  -d '{"name": "Алексей Козлов", "email": "alexey@example.com", "age": 32}'
+
+# Пользователи - обновить
+curl -X PUT http://localhost:3000/api/users/1 \
+  -H "Content-Type: application/json" \
+  -d '{"name": "Иван Обновленный", "age": 26}'
+
+# Пользователи - удалить
+curl -X DELETE http://localhost:3000/api/users/2
+
+# Товары - получить все
+curl -X GET http://localhost:3000/api/products
+
+# Товары - с фильтрацией по категории
+curl -X GET "http://localhost:3000/api/products?category=Электроника"
+
+# Товары - с фильтрацией по наличию
+curl -X GET "http://localhost:3000/api/products?inStock=true"
+
+# Товары - получить по ID
+curl -X GET http://localhost:3000/api/products/1
+
+# Товары - создать новый
+curl -X POST http://localhost:3000/api/products \
+  -H "Content-Type: application/json" \
+  -d '{"name": "Мышь", "price": 1500, "category": "Аксессуары", "inStock": true}'
+
+# Товары - обновить
+curl -X PUT http://localhost:3000/api/products/1 \
+  -H "Content-Type: application/json" \
+  -d '{"price": 45000, "inStock": false}'
+
+# Товары - удалить
+curl -X DELETE http://localhost:3000/api/products/3
+
+# Несуществующий маршрут
+curl -X GET http://localhost:3000/api/unknown
