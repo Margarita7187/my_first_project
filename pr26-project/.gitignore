@@ -1,0 +1,17 @@
+my-first-laravel-app/vendor/
+
+my-first-laravel-app/.env
+
+my-first-laravel-app/storage/framework/cache/
+my-first-laravel-app/storage/framework/sessions/
+my-first-laravel-app/storage/framework/views/
+my-first-laravel-app/storage/logs/
+my-first-laravel-app/bootstrap/cache/
+
+.my-first-laravel-app/.idea
+my-first-laravel-app/.vscode
+*.swp
+*.swo
+
+.DS_Store
+Thumbs.db
